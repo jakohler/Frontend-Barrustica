@@ -1,14 +1,8 @@
 import Head from 'next/head'
-import { Center, Footer, Tag, Showcase, DisplaySmall, DisplayMedium } from '../components'
-import { titleIfy, slugify } from '../utils/helpers'
+import { Center, Footer, Tag, Showcase, DisplayMedium } from '../components'
 import { fetchInventory } from '../utils/inventoryProvider'
-import CartLink from '../components/CartLink'
 
-const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
-  const inventory = inventoryData.slice(0, 4)
-  const categories = categoryData.slice(0, 2)
-
-  
+const Home = () => {
 
   return (
     <>
@@ -22,15 +16,13 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
           p-6 pb-10 smpb-6
           flex lg:flex-row flex-col">
           <div className="pt-4 pl-2 sm:pt-12 sm:pl-12 flex flex-col">
-            <Tag
-              category="BARRUSTICA"
-            />
+            <Tag/>
             <Center
-              title="Barrustica"
+              title="Barrústica"
               link={`/about`}
             />
             <Footer
-              designer="infromacion"
+              designer="Logos de redes sociales"
             />
           </div>
           <div className="flex flex-1 justify-center items-center relative">
@@ -44,15 +36,15 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
         </div>
       </div>
       <div className="
-        lg:my-8 lg:grid-cols-2
+        lg:my-8 lg:grid-cols-3
         grid-cols-1
         grid gap-4 my-4 
       ">
         <DisplayMedium
-          imageSrc="https://res.cloudinary.com/dkchgeslr/image/upload/v1691612140/vwbdqxwkqs99whwny5b7.jpg"
+          imageSrc="https://res.cloudinary.com/dtonpwwo3/image/upload/v1695137648/dtexmuwydsfjmqjifccn.jpg"
           subtitle="Barrustica"
-          title="Artistas"
-          link={`/artist`}
+          title="Seminarios"
+          link={`/seminario`}
         />
         <DisplayMedium
           imageSrc="https://res.cloudinary.com/dkchgeslr/image/upload/v1691501222/q627zzuvcchyymwpqzt7.jpg"
@@ -60,40 +52,13 @@ const Home = ({ inventoryData = [], categories: categoryData = [] }) => {
           title="Piezas"
           link={`/pieces`}
         />
+        <DisplayMedium
+          imageSrc="https://res.cloudinary.com/dtonpwwo3/image/upload/v1695139838/mkhwsbvlz3dtnygenuco.jpg"
+          subtitle="Barrustica"
+          title="Talleres"
+          link={`/taller`}
+        />
       </div>
-      {/* <div className="pt-10 pb-6 flex flex-col items-center">
-        <h2 className="text-4xl mb-3">Trending Now</h2>
-        <p className="text-gray-600 text-sm">Find the perfect piece or accessory to finish off your favorite room in the house.</p>
-      </div>
-      <div className="my-8 flex flex-col lg:flex-row justify-between">
-        <DisplaySmall
-          imageSrc={inventory[0].image}
-          title={inventory[0].name}
-          subtitle={inventory[0].categories[0]}
-          link={`/product/${slugify(inventory[0].name)}`}
-        />
-
-        <DisplaySmall
-          imageSrc={inventory[1].image}
-          title={inventory[1].name}
-          subtitle={inventory[1].categories[0]}
-          link={`/product/${slugify(inventory[1].name)}`}
-        />
-
-        <DisplaySmall
-          imageSrc={inventory[2].image}
-          title={inventory[2].name}
-          subtitle={inventory[2].categories[0]}
-          link={`/product/${slugify(inventory[2].name)}`}
-        />
-
-        <DisplaySmall
-          imageSrc={inventory[3].image}
-          title={inventory[3].name}
-          subtitle={inventory[3].categories[0]}
-          link={`/product/${slugify(inventory[3].name)}`}
-        />
-      </div> */}
     </>
   )
 }

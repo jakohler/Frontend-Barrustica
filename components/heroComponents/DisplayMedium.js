@@ -7,7 +7,7 @@ const DisplayMedium = ({ imageSrc, title, subtitle, link }) => {
       <Link legacyBehavior href={`${link}`}>
         <a aria-label={title} style={{ display: 'block' }}>
           <div className="flex flex-column justify-center items-center h-56">
-            <Image src={imageSrc} alt={title} className="w-3/5 max-w-full" style={{ width: '30%'}} />
+            <Image src={imageSrc} alt={title} className="w-3/5 max-w-full" style={{ width: '45%'}} />
           </div>
           <div className="mb-8">
             <p className="text-3xl font-semibold mb-1">{title}</p>

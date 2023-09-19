@@ -3,7 +3,7 @@ import Image from '../../components/Image'
 import { slugify } from '../../utils/helpers'
 import { SiteContext, ContextProviderComponent } from '../../context/mainContext'
 
-const ArtistView = (props) => {
+const TallerView = (props) => {
   const { reqProduct } = props
   const { image, name, description } = reqProduct
 
@@ -26,7 +26,7 @@ const ArtistView = (props) => {
         </div>
         <div className="pt-2 px-0 md:px-10 pb-8 w-full md:w-1/2">
           <h1 className="
-           sm:mt-0 mt-2 text-5xl font-light leading-large
+           sm:mt-0 mt-2 text-5xl font-light leading-large mb-7
           ">{name}</h1>
           <p className="text-gray-600 leading-7">{description}</p>
         </div>
@@ -36,7 +36,7 @@ const ArtistView = (props) => {
 }
 
 export async function getStaticPaths () {
-  const req = await fetch('http://localhost:5132/Art/ListArtist');
+  const req = await fetch('http://localhost:5132/Art/ListTaller');
   const products = await req.json();
   const paths = products.map(item => {
     return { params: { name: slugify(item.name) }}
@@ -49,7 +49,7 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ params }) {
   const name = params.name.replace(/-/g," ")
-  const req = await fetch('http://localhost:5132/Art/ListArtist');
+  const req = await fetch('http://localhost:5132/Art/ListTaller');
   const products = await req.json();
   const reqProduct = products.find(item => slugify(item.name) === slugify(name))
 
@@ -60,16 +60,16 @@ export async function getStaticProps ({ params }) {
   }
 }
 
-function ArtistViewWithContext(props) {
+function TallerViewWithContext(props) {
   return (
     <ContextProviderComponent>
       <SiteContext.Consumer>
         {
-          context => <ArtistView {...props} context={context} />
+          context => <TallerView {...props} context={context} />
         }
       </SiteContext.Consumer>
     </ContextProviderComponent>
   )
 }
 
-export default ArtistViewWithContext
+export default TallerViewWithContext

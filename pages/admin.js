@@ -28,9 +28,11 @@ class Admin extends React.Component {
         this.setState({ formState: 'confirmSignUp' })
       } else {
         // Manejar errores de registro
+        
       }
     } catch (error) {
       // Manejar errores de conexión
+      console.error("Error")
     }
   }
   confirmSignUp = async (form) => {
@@ -54,12 +56,10 @@ class Admin extends React.Component {
   signIn = async (form) => {
     const { username, password } = form
     // signIn
-
     try {
       const url = `http://localhost:5132/User/SignIn?userName=${username}&password=${password}`;
       const response = await fetch(url);
       const resUser = await response.json();
-
       if (response.ok && resUser.username == username && resUser.password == password) {
         // Cambiar el estado para mostrar la pantalla de inicio de sesión
         this.setState({ formState: 'signedIn', isAdmin: resUser.isAdmin })

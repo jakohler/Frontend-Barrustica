@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { slugify } from '../utils/helpers'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { navItemLength } from '../ecommerce.config'
@@ -44,13 +43,33 @@ export default function Layout({ children, categories }) {
                   </p>
                 </a>
               </Link>
-              <Link legacyBehavior href="/artist">
+              <Link legacyBehavior href="/taller">
                 <a aria-label="Home">
                   <p className="
                     sm:mr-8 sm:mb-0
                     mb-4 text-left text-smaller mr-4
                   ">
-                    Artistas
+                    Talleres
+                  </p>
+                </a>
+              </Link>
+              <Link legacyBehavior href="/seminario">
+                <a aria-label="Home">
+                  <p className="
+                    sm:mr-8 sm:mb-0
+                    mb-4 text-left text-smaller mr-4
+                  ">
+                    Seminarios
+                  </p>
+                </a>
+              </Link>
+              <Link legacyBehavior href="/contact">
+                <a aria-label="Home">
+                  <p className="
+                    sm:mr-8 sm:mb-0
+                    mb-4 text-left text-smaller mr-4
+                  ">
+                    Contacto
                   </p>
                 </a>
               </Link>
@@ -70,7 +89,7 @@ export default function Layout({ children, categories }) {
         border-solid
         border-t border-gray-300">
           <span className="block text-gray-700 text-xs">Copyright © Barrustica. Todos los derechos reservados.</span>
-          <div className="
+          {/* <div className="
             sm:justify-end sm:m-0
             flex flex-1 mt-4
           ">
@@ -79,7 +98,7 @@ export default function Layout({ children, categories }) {
               <p className="text-sm font-semibold">Admins</p>
               </a>
             </Link>
-          </div>
+          </div> */}
         </div>
       </footer>
       <ToastContainer autoClose={3000} />
