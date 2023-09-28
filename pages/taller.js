@@ -39,7 +39,7 @@ export default function Taller({reqProduct}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:5132/Art/ListTaller');
+  const res = await fetch('http://127.0.0.1:5132/Art/ListTaller');
   const reqProduct = await res.json();
 
   return {

@@ -39,7 +39,7 @@ export default function Seminario({reqProduct}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:5132/Art/ListSeminario');
+  const res = await fetch('http://127.0.0.1:5132/Art/ListSeminario');
   const reqProduct = await res.json();
 
   return {

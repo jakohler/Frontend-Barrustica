@@ -24,7 +24,7 @@ export default function AboutView(){
     
     try {
       // Enviar los datos del formulario al servidor backend
-      await axios.post('http://localhost:5132/Contact/sendEmail', formData);
+      await axios.post('http://127.0.0.1:5132/Contact/sendEmail', formData);
       
       // Limpiar el formulario o realizar cualquier otra acción que desees
       setFormData({

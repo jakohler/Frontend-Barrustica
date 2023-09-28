@@ -15,7 +15,7 @@ class Admin extends React.Component {
   signUp = async (form) => {
     // sign up
     try {
-      const response = await fetch('http://localhost:5132/User/SignUp', {
+      const response = await fetch('http://127.0.0.1:5132/User/SignUp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ class Admin extends React.Component {
     const { username, authcode } = form
     // confirm sign up
     try {
-      const url = `http://localhost:5132/User/ConfirmSignUp?userName=${username}`;
+      const url = `http://127.0.0.1:5132/User/ConfirmSignUp?userName=${username}`;
       const response = await fetch(url);
       const resAuthCode = await response.json();
       
@@ -57,7 +57,7 @@ class Admin extends React.Component {
     const { username, password } = form
     // signIn
     try {
-      const url = `http://localhost:5132/User/SignIn?userName=${username}&password=${password}`;
+      const url = `http://127.0.0.1:5132/User/SignIn?userName=${username}&password=${password}`;
       const response = await fetch(url);
       const resUser = await response.json();
       if (response.ok && resUser.username == username && resUser.password == password) {

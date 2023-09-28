@@ -29,7 +29,7 @@ class AddInventory extends React.Component {
     };
 
     try {
-      const response = await axios.post('http://localhost:5132/Art/AddSeminario', data);
+      const response = await axios.post('http://127.0.0.1:5132/Art/AddSeminario', data);
       if (response.status === 200) {
         console.log('Item agregado exitosamente');
         this.clearForm();

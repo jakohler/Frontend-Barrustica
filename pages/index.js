@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <div className="w-full">
         <Head>
-          <title>Barrustica</title>
+          <title>Barrústica</title>
           <meta name="description" content="Jamstack ECommerce Next provides a way to quickly get up and running with a fully configurable ECommerce site using Next.js." />
           <meta property="og:title" content="Jamstack ECommerce" key="title" />
         </Head>
@@ -42,19 +42,19 @@ const Home = () => {
       ">
         <DisplayMedium
           imageSrc="https://res.cloudinary.com/dtonpwwo3/image/upload/v1695137648/dtexmuwydsfjmqjifccn.jpg"
-          subtitle="Barrustica"
+          subtitle="Barrústica"
           title="Seminarios"
           link={`/seminario`}
         />
         <DisplayMedium
           imageSrc="https://res.cloudinary.com/dkchgeslr/image/upload/v1691501222/q627zzuvcchyymwpqzt7.jpg"
-          subtitle="Barrustica"
+          subtitle="Barrústica"
           title="Piezas"
           link={`/pieces`}
         />
         <DisplayMedium
           imageSrc="https://res.cloudinary.com/dtonpwwo3/image/upload/v1695139838/mkhwsbvlz3dtnygenuco.jpg"
-          subtitle="Barrustica"
+          subtitle="Barrústica"
           title="Talleres"
           link={`/taller`}
         />

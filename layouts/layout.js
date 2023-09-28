@@ -88,7 +88,7 @@ export default function Layout({ children, categories }) {
         desktop:px-0
         border-solid
         border-t border-gray-300">
-          <span className="block text-gray-700 text-xs">Copyright © Barrustica. Todos los derechos reservados.</span>
+          <span className="block text-gray-700 text-xs">Copyright © Barrústica. Todos los derechos reservados.</span>
           {/* <div className="
             sm:justify-end sm:m-0
             flex flex-1 mt-4

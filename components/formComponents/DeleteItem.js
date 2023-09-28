@@ -22,7 +22,7 @@ class AddInventory extends React.Component {
     if (!type || !image) return;
     
     try {
-      const response = await axios.delete(`http://localhost:5132/Art/DeleteItem?image=${this.state.image}&type=${this.state.type}`);
+      const response = await axios.delete(`http://127.0.0.1:5132/Art/DeleteItem?image=${this.state.image}&type=${this.state.type}`);
       if (response.status === 200) {
         console.log('Item eliminado exitosamente');
         this.clearForm();

@@ -36,7 +36,7 @@ const SeminarioView = (props) => {
 }
 
 export async function getStaticPaths () {
-  const req = await fetch('http://localhost:5132/Art/ListSeminario');
+  const req = await fetch('http://127.0.0.1:5132/Art/ListSeminario');
   const products = await req.json();
   const paths = products.map(item => {
     return { params: { name: slugify(item.name) }}
@@ -49,7 +49,7 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ params }) {
   const name = params.name.replace(/-/g," ")
-  const req = await fetch('http://localhost:5132/Art/ListSeminario');
+  const req = await fetch('http://127.0.0.1:5132/Art/ListSeminario');
   const products = await req.json();
   const reqProduct = products.find(item => slugify(item.name) === slugify(name))
 
