@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 async function fetchImage() {
-    const response = await axios.get('http://localhost:3000/api/images');
+    const response = await axios.get('http://127.0.0.1:3000/api/images');
     return response.data;
 }
 

@@ -16,5 +16,5 @@ app.get('/api/images', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor proxy en funcionamiento en http://localhost:${port}`);
+    console.log(`Servidor proxy en funcionamiento en http://127.0.0.1:${port}`);
 });
